@@ -9,6 +9,7 @@ Materials for setting up a Jupyter data science environment and exploring introd
 - [Starting Jupyter Server](#starting-jupyter-server)
 - [Requirements](#requirements)
 - [Homebrew Installation (macOS)](#homebrew-installation-macos)
+- [Python Installation](#python-installation)
 - [Git Installation](#git-installation)
 - [GitHub CLI Setup](#github-cli-setup)
 - [SSH Key Setup for GitHub](#ssh-key-setup-for-github)
@@ -155,6 +156,70 @@ brew --version
 | `brew upgrade` | Upgrade all packages |
 | `brew list` | List installed packages |
 | `brew search <name>` | Search for packages |
+
+---
+
+## Python Installation
+
+### macOS
+
+```bash
+brew install python
+```
+
+### Windows
+
+1. Download from [python.org/downloads](https://www.python.org/downloads/)
+2. Run the installer
+3. **Important**: Check "Add Python to PATH" at the bottom of the installer
+4. Click "Install Now"
+
+Or using winget:
+```bash
+winget install --id Python.Python.3.12
+```
+
+### Linux
+
+#### Debian/Ubuntu
+```bash
+sudo apt update
+sudo apt install python3 python3-pip python3-venv
+```
+
+#### Fedora
+```bash
+sudo dnf install python3 python3-pip
+```
+
+### Verify Installation
+
+```bash
+# macOS/Linux
+python3 --version
+pip3 --version
+
+# Windows
+python --version
+pip --version
+```
+
+### Create a Virtual Environment
+
+Virtual environments isolate project dependencies:
+
+```bash
+# Create
+python3 -m venv myenv        # macOS/Linux
+python -m venv myenv         # Windows
+
+# Activate
+source myenv/bin/activate    # macOS/Linux
+myenv\Scripts\activate       # Windows
+
+# Deactivate
+deactivate
+```
 
 ---
 
